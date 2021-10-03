@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import './App.css';
 
 import ShoppingIcon from './assets/shopping-icon.svg'
 
 function App() {
+  const [value, setValue] = useState('')
   return (
   <>
     <nav className="nav">
@@ -12,7 +13,7 @@ function App() {
     </nav>
     <section className="container">
       <form className="form">
-        <input className="input" type="text" placeholder="silakan masukan list"/>
+        <input className="input" value={value} onChange={(e) => setValue(e.target.value)} type="text" placeholder="silakan masukan list"/>
         <button className="add-button" type="submit">add</button>
       </form>
     </section>
